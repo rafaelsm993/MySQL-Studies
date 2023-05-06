@@ -1,0 +1,46 @@
+/*Organize a query by names*/
+
+SELECT * FROM cursos ORDER BY nome DESC;
+
+/*Can be ordered by ascending or descending [ASC/DESC]*/
+
+/*Select a few columns*/
+
+SELECT nome, carga, ano FROM cursos ORDER BY ano DESC , nome ASC;
+
+/*Could be ordered by any column*/
+
+/*Select with a condition*/
+
+SELECT nome, descricao, carga
+FROM cursos
+WHERE
+    ano <> 2016
+    /*Can use any logical operator (= | <= | >= | > | < | != or <>)*/
+ORDER BY nome ASC;
+
+/*Between fucntion*/
+
+SELECT nome, ano
+FROM cursos
+WHERE ano BETWEEN 2014 and 2016
+ORDER BY ano DESC, nome;
+
+/*OR/AND difference*/
+
+SELECT nome, totaulas, carga
+FROM cursos
+WHERE carga > 35 AND totaulas < 30
+ORDER BY nome;
+
+SELECT nome, totaulas, carga
+FROM cursos
+WHERE carga > 35 OR totaulas < 30
+ORDER BY nome;
+
+/*IN function*/
+
+SELECT ano, nome, descricao
+FROM cursos
+WHERE ano in (2014, 2016, 2020)
+ORDER BY ano ASC, nome;

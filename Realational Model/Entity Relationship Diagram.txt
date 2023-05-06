@@ -1,0 +1,25 @@
+                                                                                                                    Types:
+ _________                                                     __________                                                     ______   n                   n   ______
+| PERSONS | -----> Atributes:                                 |  Course  |   ---> Atributes:                                 |Person| ------- <WATCH> ------- |Course|    
+|_________|             * id (Primary Key)                    |__________|          * idcourse (Primary Key)           
+          |             * name                                                      * name                                      *Many-to-Many       
+          |             * job                                                       * description                                           
+          |             * birthdate                                                 * charge                                _______  1                        1  ____
+Entity <--|             * height                                                    * maxclasses                           |Husband| ------ <Marry With> ------ |Wife|
+                        * wight                                                     * year                                      
+                        * nationality                                                                                           *One-to-One
+                        * sex 
+                                                                                                                           ________  1                        n ______
+                                                                                                                          |Employee| ------ <Take Care> ------ |Intern|
+----> One-To-One:
+        -Choose one entity to be dominant, and put the primary key                                                              *One-to-Many
+         from the non-dominant entity as a foreing key on the dominant one.
+
+----> One-To-Many:
+        -Put the primary key from the 1 side to n side as a foreing key.                                            //EVERY SQL TRANSACTION MUST OBEY THE A.C.I.D ACRONYM//
+
+----> Many-to-Many:                                                                                                    - Atomicity, Consistency, Isolation, and Durability
+        -Make a new entity from the relation and apply the One-to-Many Logic
+            Example:
+                 ______  n                n   _______            ______  1      n  ___  n      1  _______
+                |Client| ------ <Buy> ------ |Product|    ====> |Client|----<>----|Buy|----<>----|Product|
